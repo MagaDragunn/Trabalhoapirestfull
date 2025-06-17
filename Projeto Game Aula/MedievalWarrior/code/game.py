@@ -7,17 +7,15 @@ class Game:
     def __init__(self):
         self.window = None
         py.init()
-        py.display.set_mode(size=(800, 600))
+        py.display.set_mode(size=(1.604, 604))
     def run(self):
         while True:
             menu = Menu(self.window)
             menu.run()
             pass
 
-
-
-            # Check for all events
-            #for event in py.event.get():
-            #   if event.type == py.QUIT:
-            #       py.quit()  # close Windows
-            #       quit()  # end pygame
+# Check for all events
+#for event in py.event.get():
+#   if event.type == py.QUIT:
+#       py.quit()  # close Windows
+#       quit()  # end pygame
