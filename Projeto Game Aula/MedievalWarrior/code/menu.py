@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH
+from code.Const import WIN_WIDTH, COLOR_RED, MENU_OPTION , COLOR_WHITE
 
 
 class Menu:
@@ -18,7 +18,11 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(text_size=80, text= "Medival Warriors", text_color=(255, 0, 0), text_center_pos=((WIN_WIDTH / 2),70))
+            self.menu_text(80,  "Medival Warriors", COLOR_RED, ((WIN_WIDTH / 2),70))
+
+            for i in range(len(MENU_OPTION)):
+                self.menu_text(30, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2),350 + 45 * i))
+
             pygame.display.flip()
             # Check all Events
             for event in pygame.event.get():
