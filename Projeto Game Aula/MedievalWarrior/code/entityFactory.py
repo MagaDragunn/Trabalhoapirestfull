@@ -14,10 +14,7 @@ class EntityFactory:
                 for i in range(4):
                     WIN_WIDTH * i
                     list_bg.append(Background(f'Level1Bgr{i}', (0, 0)))
-                # Fundos que entram após os fixos - Level1Bgr4, depois 5 e 6
-                # list_bg.append(Background('Level1Bgr4', (WIN_WIDTH * 4, 0)))
-                # list_bg.append(Background('Level1Bgr5', (WIN_WIDTH * 5, 0)))
-                # list_bg.append(Background('Level1Bgr6', (WIN_WIDTH * 6, 0)))
+                    list_bg.append(Background(f'Level1Bgr{i}', (WIN_WIDTH, 0)))
                 return list_bg
 
 

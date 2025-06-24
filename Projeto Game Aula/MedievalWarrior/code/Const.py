@@ -9,6 +9,13 @@ MENU_OPTION = ( 'NEW GAME NINJA',
                 'NEW GAME MAGO',
                 'SCORE',
                 'EXIT')
+# E
+ENTITY_SPEED = {
+    'Level1Bgr0' : 0,
+    'Level1Bgr1' : 1,
+    'Level1Bgr2' : 1,
+    'Level1Bgr3' : 2,
+}
 
 # W
 WIN_WIDTH = 1064
