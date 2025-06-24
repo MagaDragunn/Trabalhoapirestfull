@@ -20,7 +20,7 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(80, "Medival Warriors", COLOR_RED, ((WIN_WIDTH / 2),70))
+            self.menu_text(80, "Medieval Warriors", COLOR_RED, ((WIN_WIDTH / 2),70))
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
                     self.menu_text( 30, MENU_OPTION[i], COLOR_YELLOW, ((WIN_WIDTH / 2), 350 + 45 * i))
