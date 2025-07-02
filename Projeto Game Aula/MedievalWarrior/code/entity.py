@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 import pygame.image
+from pygame import Surface
+
 
 class Entity(ABC):
+    surf: Surface
     def __init__(self, name: str, position: tuple):
         self.name = name
         self.surf = pygame.image.load('./asset/' + name + '.png')
