@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 import pygame.image
+import pygame
 from pygame import Surface
-
 from code.Const import ENTITY_HEALTH
 
 
@@ -15,7 +15,6 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
         self.health = ENTITY_HEALTH[self.name]
-
     @abstractmethod
     def move(self, ):
         pass

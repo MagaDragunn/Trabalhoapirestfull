@@ -19,8 +19,11 @@ ENTITY_SPEED = {
     'Level1Bgr2' : 1,
     'Level1Bgr3' : 2,
     'Knight' : 3,
+    'KnightMagic' : 2,
     'Mage' : 1,
+    'MageMagic' : 2,
     'Rogue' : 5,
+    'RogueMagic' : 2,
     'Enemy1': 1,
     'Enemy2' : 2,
     'Enemy3' : 3
@@ -33,11 +36,23 @@ ENTITY_HEALTH ={
     'Knight' : 100,
     'Mage' : 80,
     'Rogue' : 70,
+    'KnightMagic' : 1,
+    'MageMagic' : 1,
+    'RogueMagic' : 1,
     'Enemy1': 100,
     'Enemy2' : 200,
     'Enemy3' : 250
 }
-
+# P
+PLAYER_KEY_LEFT = {'Knight' : pygame.K_LEFT,
+                   'Mage' : pygame.K_LEFT,
+                   'Rogue' : pygame.K_LEFT}
+PLAYER_KEY_RIGHT = {'Knight' : pygame.K_RIGHT,
+                   'Mage' : pygame.K_RIGHT,
+                   'Rogue' : pygame.K_RIGHT}
+PLAYER_KEY_MAGIC = {'Knight' : pygame.K_SPACE,
+                   'Mage' : pygame.K_SPACE,
+                   'Rogue' : pygame.K_SPACE}
 # S
 SPAWN_TIME = 5000
 # W
