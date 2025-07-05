@@ -25,8 +25,21 @@ ENTITY_SPEED = {
     'Enemy2' : 2,
     'Enemy3' : 3
 }
+ENTITY_HEALTH ={
+    'Level1Bgr0': 999,
+    'Level1Bgr1': 999,
+    'Level1Bgr2': 999,
+    'Level1Bgr3': 999,
+    'Knight' : 100,
+    'Mage' : 80,
+    'Rogue' : 70,
+    'Enemy1': 100,
+    'Enemy2' : 200,
+    'Enemy3' : 250
+}
+
 # S
-SPAWN_TIME = 4000
+SPAWN_TIME = 5000
 # W
 WIN_WIDTH = 1064
 WIN_HEIGHT = 604
