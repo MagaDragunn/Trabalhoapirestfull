@@ -10,7 +10,6 @@ C_GREEN = (0, 128, 0)
 MENU_OPTION = ( 'NEW GAME KNIGHT',
                 'NEW GAME MAGE',
                 'NEW GAME ROGUE',
-                'SCORE',
                 'EXIT')
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
