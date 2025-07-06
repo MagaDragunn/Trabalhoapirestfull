@@ -1,8 +1,7 @@
-from code.Const import WIN_WIDTH
-from code.PlayerMagic import PlayerMagic
-from code.enemy import Enemy
 from code.entity import Entity
-from code.player import Player, AnimatedEntity
+from code.enemy import Enemy
+from code.player import AnimatedEntity, PlayerMagic, Player
+from code.Const import WIN_WIDTH
 
 
 class EntityMediator:
@@ -20,11 +19,18 @@ class EntityMediator:
     def __verify_collision_entity(ent1, ent2):
         if isinstance(ent1, AnimatedEntity) and isinstance(ent2, Enemy):
             if EntityMediator.__rects_collide(ent1.rect, ent2.rect):
-                ent1.health -= ent2.damage
                 ent2.health -= ent1.damage
+                ent1.collided = True  # a magia para de andar
         elif isinstance(ent2, AnimatedEntity) and isinstance(ent1, Enemy):
             if EntityMediator.__rects_collide(ent1.rect, ent2.rect):
                 ent1.health -= ent2.damage
+                ent2.collided = True
+        elif isinstance(ent1, Player) and isinstance(ent2, Enemy):
+            if EntityMediator.__rects_collide(ent1.rect, ent2.rect):
+                ent1.health -= ent2.damage
+
+        elif isinstance(ent2, Player) and isinstance(ent1, Enemy):
+            if EntityMediator.__rects_collide(ent1.rect, ent2.rect):
                 ent2.health -= ent1.damage
 
     @staticmethod
@@ -37,18 +43,20 @@ class EntityMediator:
                 EntityMediator.__verify_collision_entity(entity1, entity2)
 
     @staticmethod
-    def verify_health(entity_list: list[Entity]):
-        for ent in entity_list[:]:
-            if ent.health <= 0 and not isinstance(ent, AnimatedEntity):
-                entity_list.remove(ent)
-            elif isinstance(ent, AnimatedEntity) and ent.finished:
-                entity_list.remove(ent)
+    def verify_health(entity_list: list[Entity]) -> int:
+        killed = 0
+        for ent in entity_list:
+            if hasattr(ent, 'health') and ent.health <= 0 and not getattr(ent, 'finished', False):
+                ent.finished = True
+                if 'Enemy' in ent.name or getattr(ent, 'is_enemy', False):
+                    killed += 1
+        return killed
 
     @staticmethod
     def __rects_collide(r1, r2):
         return (
-                r1.right >= r2.left and
-                r1.left <= r2.right and
-                r1.bottom >= r2.top and
-                r1.top <= r2.bottom
+            r1.right >= r2.left and
+            r1.left <= r2.right and
+            r1.bottom >= r2.top and
+            r1.top <= r2.bottom
         )

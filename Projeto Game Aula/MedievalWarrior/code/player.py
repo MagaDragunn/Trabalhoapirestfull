@@ -23,9 +23,7 @@ class Player(Entity):
         pass
 
     def magic(self):
-        pressed_key = pygame.key.get_pressed()
-        if pressed_key[PLAYER_KEY_MAGIC[self.name]]:
-           return PlayerMagic(name=f'{self.name}Magic', position=(self.rect.centerx, self.rect.centery))
+        pass
 
 class AnimatedEntity(Entity):
     def __init__(self, name: str, position: tuple):
@@ -70,11 +68,11 @@ class AnimatedEntity(Entity):
         if self.animation_timer >= self.animation_speed:
             self.animation_timer = 0
             self.current_frame += 1
-            if self.current_frame >= len(self.frames):
-                self.finished = True
-            else:
-                self.surf = self.frames[self.current_frame]
 
+            if self.current_frame >= len(self.frames):
+                self.current_frame = len(self.frames) - 1
+                self.finished = True
+        self.surf = self.frames[int(self.current_frame)]
     def move(self):
         # Move a magia para a direita (pode ajustar direção)
         self.rect.x += self.speed
