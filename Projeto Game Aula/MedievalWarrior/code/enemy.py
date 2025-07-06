@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from code.entity import Entity
-from code.Const import ENTITY_SPEED, WIN_WIDTH
+from code.Const import ENTITY_SPEED, WIN_WIDTH, ENTITY_HEALTH, ENTITY_DAMAGE
 import pygame
 
 class Enemy(Entity):

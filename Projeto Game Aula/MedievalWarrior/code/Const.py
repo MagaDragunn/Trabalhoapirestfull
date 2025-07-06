@@ -1,9 +1,10 @@
 # C
 import pygame
 
-COLOR_RED = (255, 0, 0)
-COLOR_WHITE = (255, 255, 255)
-COLOR_YELLOW = (227, 227, 23)
+C_RED = (255, 0, 0)
+C_WHITE = (255, 255, 255)
+C_YELLOW = (227, 227, 23)
+C_GREEN = (0, 128, 0)
 
 # M
 MENU_OPTION = ( 'NEW GAME KNIGHT',
@@ -33,15 +34,31 @@ ENTITY_HEALTH ={
     'Level1Bgr1': 999,
     'Level1Bgr2': 999,
     'Level1Bgr3': 999,
-    'Knight' : 100,
-    'Mage' : 80,
-    'Rogue' : 70,
+    'Knight' : 250,
+    'Mage' : 200,
+    'Rogue' : 300,
     'KnightMagic' : 1,
     'MageMagic' : 1,
     'RogueMagic' : 1,
     'Enemy1': 100,
     'Enemy2' : 200,
     'Enemy3' : 250
+}
+# D
+ENTITY_DAMAGE = {
+    'Level1Bgr0': 0,
+    'Level1Bgr1': 0,
+    'Level1Bgr2': 0,
+    'Level1Bgr3': 0,
+    'Knight': 10,
+    'Mage': 15,
+    'Rogue': 20,
+    'KnightMagic': 25,
+    'MageMagic': 30,
+    'RogueMagic': 45,
+    'Enemy1': 20,
+    'Enemy2': 40,
+    'Enemy3': 60
 }
 # P
 PLAYER_KEY_LEFT = {'Knight' : pygame.K_LEFT,

@@ -1,5 +1,5 @@
 import pygame
-from code.Const import ENTITY_SPEED
+from code.Const import ENTITY_SPEED, ENTITY_HEALTH, ENTITY_DAMAGE
 from code.entity import Entity
 
 
@@ -10,3 +10,4 @@ class PlayerMagic(Entity):
 
     def move(self, ):
         self.rect.centerx += ENTITY_SPEED[self.name]
+        self.rect.x += self.speed
